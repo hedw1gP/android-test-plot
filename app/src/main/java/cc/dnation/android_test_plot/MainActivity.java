@@ -1,5 +1,6 @@
 package cc.dnation.android_test_plot;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Button 1 clicked!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"Redirect to Activity2...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
             }
         });
     }
