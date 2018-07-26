@@ -7,10 +7,15 @@
     tools:context="cc.dnation.android_test_plot.MainActivity">
 
     <Button
+        android:id="@+id/button_dial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dial 10086" />
+
+    <Button
         android:id="@+id/button_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="Button 1" />
 
 </LinearLayout>

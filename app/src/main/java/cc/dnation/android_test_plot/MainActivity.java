@@ -1,6 +1,7 @@
 package cc.dnation.android_test_plot;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,15 +22,29 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Button button1 = (Button) findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this,"Redirect to Activity2...", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Button buttonDial = (Button) findViewById(R.id.button_dial);
+        buttonDial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:10086"));
                 startActivity(intent);
             }
         });
+
     }
         public boolean onOptionsItemSelected(MenuItem item){
             switch (item.getItemId()) {
