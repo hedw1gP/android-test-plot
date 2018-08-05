@@ -8,9 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText edit1;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* Multi activity */
         Button button1 = (Button) findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,17 +38,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /* Phone intent */
         Button buttonDial = (Button) findViewById(R.id.button_dial);
         buttonDial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:10086"));
+                intent.setData(Uri.parse("tel:110"));
                 startActivity(intent);
             }
         });
 
+        /* Get String */
+        edit1 = (EditText) findViewById(R.id.Edit1);
+        Button buttonVerify = (Button) findViewById(R.id.producerVerify);
+        buttonVerify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String yes_no = edit1.getText().toString();
+                Toast.makeText(MainActivity.this,"你"+yes_no+"普罗丢瑟！", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
+
+
+        /* Menu */
         public boolean onOptionsItemSelected(MenuItem item){
             switch (item.getItemId()) {
                 case R.id.menu_btn1:

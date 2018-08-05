@@ -4,20 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="cc.dnation.android_test_plot.MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="この歌声が UUUUNNNIIIIOOOOOOONNNNNN!!!!!!" />
 
     <Button
         android:id="@+id/button_dial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="dial 10086" />
+        android:textAllCaps="false"
+        android:text="kill yourself" />
 
     <Button
         android:id="@+id/button_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Button 1" />
+        android:text="jump to Main2" />
+
+    <EditText
+        android:id="@+id/Edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="你是普罗丢瑟吗？"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/producerVerify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify" />
 
 </LinearLayout>
